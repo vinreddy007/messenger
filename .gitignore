@@ -1,0 +1,6 @@
+raw_messages
+processed_messages
+__pycache__/
+.idea/
+.python-version
+.ipynb_checkpoints
