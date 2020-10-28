@@ -3,7 +3,7 @@ Stacked Bar chart to look at the distribution of messages between me and each fr
 Or plot it as a ratio, with a dashed line of 1
 Average message length by person
 Reactions by person
-OH SHIT IM GETTING SO EXCITED LOL, this IS SO JUICY
+TODO: Create functions for making the charts. Call them all from a main function of sorts
 """
 import pandas as pd
 import numpy
@@ -13,7 +13,7 @@ pd.set_option('display.max_colwidth', 1000)
 
 import pandas
 import plotly.express as px
-import plotly.graph_objs as go
+import plotly.graph_objects as go
 from python.analysis.constants import *
 TOP_N_FRIENDS = 15
 MESSAGE_LENGTH = 'Total characters sent'
@@ -56,7 +56,7 @@ fig.update_layout(
     )
 )
 
-# fig.show()
+fig.show()
 
 # Plot of ratios
 # Plot y = 1 line
@@ -92,3 +92,4 @@ fig.update_layout(
     )
 )
 fig.show()
+fig.write_image(f'{OUTPUT_PATH}/direct_message_ratio.png')

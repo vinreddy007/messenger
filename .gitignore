@@ -1,5 +1,6 @@
 raw_messages
 processed_messages
+output
 __pycache__/
 .idea/
 .python-version

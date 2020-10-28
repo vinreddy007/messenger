@@ -17,7 +17,7 @@ import plotly.figure_factory as ff
 
 # Parse the first column as a pandas.Timestamp object
 data = pandas.read_csv(ALL_MESSAGES_PATH, parse_dates=[0])
-my_messages = data[data[SENDER] == "Vinay Reddy"]
+my_messages = data[data[SENDER] == MY_NAME]
 
 # fig = px.histogram(my_messages, x=DATE, histnorm='density')
 # fig.show()
@@ -30,5 +30,6 @@ fig = go.Figure()
 fig.add_trace(go.Scatter(x=counts.index, y=counts.iloc[:, 0], fill='tozeroy', mode='none'))
 fig.update_yaxes(title_text='Messages')
 fig.update_xaxes(title_text='Date')
-fig.update_layout(title_text='Messages by month')
+fig.layout.update(title_text='Messages by month')
 fig.show()
+fig.write_image(f'{OUTPUT_PATH}/messages_over_time.png')
