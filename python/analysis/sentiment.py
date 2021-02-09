@@ -15,7 +15,8 @@ class SentimentAnalysis:
     def __init__(self, messages):
 
         # Download the vader lexicon , especially suited for sentiment analysis for texting and social media
-        nltk.download('vader_lexicon')
+        # TODO: might have to download
+        # nltk.download('vader_lexicon')
 
         self.messages = self._filter_non_text(messages)
         self.sentiment_analyzer = SentimentIntensityAnalyzer()
@@ -89,8 +90,8 @@ sentiment_analysis = SentimentAnalysis(messages=msgs)
 # Show plots in browser and save to output directory as png files
 sentiments_by_friend_fig = sentiment_analysis.plot_average_sentiments_by_friends(n_top_friends=25)
 sentiments_by_friend_fig.show()
-sentiments_by_friend_fig.write_image(f'{OUTPUT_PATH}/average_friends_sentiments.png')
+# sentiments_by_friend_fig.write_image(f'{OUTPUT_PATH}/average_friends_sentiments.png')
 
 sentiments_over_time_fig = sentiment_analysis.plot_my_sentiments_over_time()
 sentiments_over_time_fig.show()
-sentiments_over_time_fig.write_image(f'{OUTPUT_PATH}/average_sentiment_by_week.png')
+# sentiments_over_time_fig.write_image(f'{OUTPUT_PATH}/average_sentiment_by_week.png')

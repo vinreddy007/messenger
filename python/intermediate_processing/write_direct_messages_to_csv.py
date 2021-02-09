@@ -6,6 +6,7 @@ import csv
 
 """
 Output direct messages to csv
+https://towardsdatascience.com/download-and-analyse-your-facebook-messenger-data-6d1b49404e09
 """
 
 directories = ["../../raw_messages/inbox", "../../raw_messages/archived_threads"]
